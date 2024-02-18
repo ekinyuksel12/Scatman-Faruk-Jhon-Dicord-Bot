@@ -1,0 +1,6 @@
+node_modules/
+img/
+commands/legacy
+
+config.json
+commandTemplate.js
