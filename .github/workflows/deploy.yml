@@ -34,7 +34,7 @@ jobs:
       with:
         host: ${{ secrets.EC2_HOST }}
         username: ${{ secrets.EC2_USERNAME }}
-        privateKey: ${{ secrets.EC2_SSH_KEY }}
+        privateKey: ${{ secrets.EC2_SFTP_KEY }}
         localPath: scatman.7z
         remotePath: /home/ubuntu/scatman.7z
         
