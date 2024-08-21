@@ -75,7 +75,7 @@ jobs:
         script: |
           sudo docker stop scatman-faruk
           sudo docker container rm -f scatman-faruk
-          sudo docker image rm -f scatman-faruk
+          sudo docker rmi -f ${{ vars.DOCKER_IMG_NAME }}:latest
 
 
     - name: SSH into Remote Server and Deploy Docker Image
