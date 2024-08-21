@@ -36,7 +36,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.EC2_SFTP_KEY }}
-        source: 'scatman.7z'
+        source: './scatman.7z'
         target: '/home/ubuntu/'
         strip_components: 1
         
