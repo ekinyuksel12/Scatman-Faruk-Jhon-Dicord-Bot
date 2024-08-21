@@ -22,7 +22,7 @@ jobs:
 
     - name: Build Docker Image
       run: |
-        docker build -t docker-image .
+        docker build -t ${{ vars.DOCKER_IMG_NAME }} .
         docker save -o ${{ vars.DOCKER_IMG_NAME }}.tar docker-image
 
     - name: Compress Docker Image
@@ -89,6 +89,6 @@ jobs:
           cd ${{ vars.DOCKER_IMG_PATH }}
           7zr x ${{ vars.DOCKER_IMG_NAME }}.7z
           sudo docker load -i ${{ vars.DOCKER_IMG_PATH }}/${{ vars.DOCKER_IMG_NAME }}.tar
-          sudo docker run -d --name scatman-faruk scatman-faruk
+          sudo docker run -d --name ${{ vars.DOCKER_CONTAINER_NAME }} ${{ vars.DOCKER_IMG_NAME }}:latest
           rm -rf ${{ vars.DOCKER_IMG_PATH }}/${{ vars.DOCKER_IMG_NAME }}.tar
           rm -rf ${{ vars.DOCKER_IMG_PATH }}/${{ vars.DOCKER_IMG_NAME }}.7z
