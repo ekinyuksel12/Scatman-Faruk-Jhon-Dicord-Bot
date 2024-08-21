@@ -30,14 +30,15 @@ jobs:
         7zr a -mx=3 scatman.7z scatman.tar
 
     - name: Upload to EC2 Instance
-      uses: Creepios/sftp-action@v1.0.3
+      uses: appleboy/scp-action@v0.1.4
       with:
         host: ${{ secrets.EC2_HOST }}
         passphrase: ${{ secrets.PASSPHRASE }}
         username: ${{ secrets.EC2_USERNAME }}
-        privateKey: ${{ secrets.EC2_SFTP_KEY }}
-        localPath: scatman.7z
-        remotePath: /home/ubuntu/scatman.7z
+        key: ${{ secrets.EC2_SFTP_KEY }}
+        source: scatman.7z
+        target: /home/ubuntu/scatman.7z
+        strip_components: 1
         
     - name: SSH into EC2 Instance and Deploy
       uses: appleboy/ssh-action@master
