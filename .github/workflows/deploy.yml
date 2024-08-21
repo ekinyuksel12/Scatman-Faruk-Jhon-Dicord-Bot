@@ -33,6 +33,7 @@ jobs:
       uses: Creepios/sftp-action@v1.0.3
       with:
         host: ${{ secrets.EC2_HOST }}
+        passphrase: ${{ secrets.PASSPHRASE }}
         username: ${{ secrets.EC2_USERNAME }}
         privateKey: ${{ secrets.EC2_SFTP_KEY }}
         localPath: scatman.7z
@@ -43,6 +44,7 @@ jobs:
       with:
         host: ${{ secrets.EC2_HOST }}
         username: ${{ secrets.EC2_USERNAME }}
+        passphrase: ${{ secrets.PASSPHRASE }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
           7zr x scatman.7z
