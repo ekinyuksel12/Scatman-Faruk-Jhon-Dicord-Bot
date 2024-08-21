@@ -48,6 +48,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
+          cd /home/ubuntu/
           7zr x scatman.7z
           sudo docker stop scatman-faruk
           sudo docker container rm -f scatman-faruk
