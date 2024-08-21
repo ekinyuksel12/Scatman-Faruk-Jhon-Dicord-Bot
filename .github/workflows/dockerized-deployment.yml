@@ -22,7 +22,7 @@ jobs:
 
     - name: Build Docker Image
       run: |
-        docker build -t docker-image 
+        docker build -t docker-image .
         docker save -o ${{ vars.DOCKER_IMG_NAME }}.tar docker-image
 
     - name: Compress Docker Image
