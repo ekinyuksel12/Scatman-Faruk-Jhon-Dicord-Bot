@@ -75,7 +75,7 @@ The repository includes a GitHub Actions workflow for Dockerized deployment. The
 - Uploads the Docker image to a remote server.
 - Deploys the Docker container on the server.
 
-For more details about the workflow structure and its key steps, refer to the document [here.](.github/workflows/README)
+For more details about the workflow structure and its key steps, refer to the document [here.](.github/workflows/README.md)
 
 ## Development
 
