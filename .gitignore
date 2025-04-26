@@ -4,3 +4,5 @@ commands/legacy
 
 config.json
 commandTemplate.js
+
+.vscode/
